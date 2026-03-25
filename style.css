@@ -903,3 +903,75 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--navy); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ─── FINANCIAL SERVICES ─────────────────────────────────── */
+.financial-services {
+  background: var(--off-white);
+}
+
+.fin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .fin-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .fin-grid { grid-template-columns: 1fr; }
+}
+
+.fin-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.fin-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,169,110,.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.fin-card:hover {
+  border-color: rgba(201,169,110,.5);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.fin-card:hover::before { opacity: 1; }
+
+.fin-icon {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+  display: block;
+  line-height: 1;
+}
+
+.fin-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.fin-card p {
+  font-size: .93rem;
+  color: var(--gray-600);
+  line-height: 1.65;
+}
+
+.fin-cta {
+  text-align: center;
+  margin-top: 48px;
+}
